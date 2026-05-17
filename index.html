@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>Wunderlust</title>
+  <link rel="icon" type="image/png" href="data:image/png;base64,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" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #f5f5f5;
+      --mid: #1a1a1a;
+      --border: #2a2a2a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem max(4rem, calc(50vw - 680px));
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.15em;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 100px max(4rem, calc(50vw - 680px)) 6rem;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .hero-bg-text {
+      position: absolute;
+      top: 50%;
+      left: -0.02em;
+      transform: translateY(-50%);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(140px, 22vw, 320px);
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,0.12);
+      letter-spacing: -0.02em;
+      pointer-events: none;
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    .hero-tag {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.4;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 9vw, 9rem);
+      letter-spacing: 0.04em;
+      line-height: 0.95;
+      margin-bottom: 2rem;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      opacity: 0.5;
+      max-width: 380px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2.4rem;
+      border: 1px solid var(--white);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    /* PRODUCTS */
+    .section {
+      padding: 8rem max(4rem, calc(50vw - 680px));
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.35;
+      margin-bottom: 4rem;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .product-card {
+      background: var(--black);
+      padding: 3rem 2.5rem;
+      transition: background 0.25s;
+      cursor: default;
+    }
+
+    .product-card:hover {
+      background: var(--mid);
+    }
+
+    .product-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      opacity: 0.08;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .product-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.75rem;
+    }
+
+    .product-desc {
+      font-size: 0.85rem;
+      opacity: 0.45;
+      line-height: 1.6;
+    }
+
+    .product-card.soon {
+      opacity: 0.4;
+      border: 1px dashed var(--border);
+      background: transparent;
+    }
+
+    .product-card.soon:hover { background: transparent; }
+
+    /* ABOUT */
+    .about-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      letter-spacing: 0.04em;
+      line-height: 1;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-text {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      opacity: 0.55;
+      text-align: center;
+      width: 100%;
+    }
+
+    .about-text p + p { margin-top: 1.2rem; }
+
+    /* CONTACT */
+    .contact-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 6rem);
+      letter-spacing: 0.04em;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      width: 100%;
+    }
+
+    .contact-email {
+      color: rgba(245,245,245,0.5);
+      text-decoration: none;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      transition: color 0.7s ease;
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+
+    .contact-email:hover { color: rgba(245,245,245,1); }
+
+    /* FOOTER */
+    footer {
+      padding: 2rem max(4rem, calc(50vw - 680px));
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      opacity: 0.25;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+    }
+
+    /* ANIMATIONS */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* TABLET */
+    @media (max-width: 900px) {
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* MOBILE */
+    @media (max-width: 640px) {
+      nav {
+        padding: 1.2rem 1.5rem;
+      }
+      .nav-links { gap: 1.25rem; }
+      .nav-links a { font-size: 0.72rem; }
+
+      .hero { padding: 5rem 1.5rem 2.5rem; justify-content: flex-start; min-height: auto; }
+      .hero-title { font-size: clamp(3rem, 14vw, 5rem); }
+
+      .section { padding: 3.5rem 1.5rem 2rem; }
+
+      #contact { padding-bottom: 1.5rem !important; }
+
+      .products-grid { grid-template-columns: 1fr; }
+      .product-card { padding: 2rem 1.75rem; }
+
+      .about-inner { grid-template-columns: 1fr; gap: 2rem; }
+
+      .contact-inner { flex-direction: column; align-items: flex-start; }
+      .contact-info { text-align: left; }
+
+      footer { flex-direction: column; gap: 0.25rem; text-align: center; padding: 1rem 1.5rem; padding-bottom: max(0.5rem, env(safe-area-inset-bottom)); margin: 0; }
+      body { margin: 0; padding: 0; }
+      html { height: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Wunderlust</a>
+    <ul class="nav-links">
+      <li><a href="/products" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'});return false;">Products</a></li>
+      <li><a href="/about" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'});return false;">About</a></li>
+      <li><a href="/info" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">Info</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-text">WUNDERLUST</div>
+    <p class="hero-tag fade-in">Est. 2024 — LLC</p>
+    <h1 class="hero-title fade-in">SMALL<br>TEAM<br>BIG IDEAS</h1>
+    <p class="hero-sub fade-in">Apps. Products. Built by 4 people who give a damn.</p>
+    <a href="/products" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'});return false;" class="btn fade-in">See What We Make</a>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="section" id="products">
+    <p class="section-label">What We Make</p>
+    <div class="products-grid">
+      <div class="product-card fade-in">
+        <div class="product-num">01</div>
+        <div class="product-name">Apps</div>
+        <p class="product-desc">Mobile and web apps built from scratch. Designed to work, built to grow.</p>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-num">02</div>
+        <div class="product-name">3D Prints</div>
+        <p class="product-desc">Precision-printed designs you won't find anywhere else. Function meets creativity.</p>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-num">03</div>
+        <div class="product-name">T-Shirts</div>
+        <p class="product-desc">Custom designed tees built to stand out. Every piece is made with intention.</p>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-num">04</div>
+        <div class="product-name">Accessories</div>
+        <p class="product-desc">The finishing touches. Small things that make a big difference.</p>
+      </div>
+      
+      <div class="product-card soon fade-in">
+        <div class="product-num">05</div>
+        <div class="product-name">Coming Soon</div>
+        <p class="product-desc">More in the works. Stay tuned.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about" style="text-align:center;">
+    <p class="section-label">About Us</p>
+    <h2 class="about-title fade-in">Who We Are</h2>
+    <div class="about-text fade-in">
+      <p>Just one family who decided to stop waiting and start building. Making apps, tees, 3D prints, and whatever's next to come.</p>
+      <p>Small team. Real work. No fluff.</p>
+    </div>
+  </section>
+
+  <!-- INFO -->
+  <section class="section" id="contact" style="text-align:center;">
+    <p class="section-label">Info Email</p>
+    <h2 class="contact-title fade-in">Get In Touch</h2>
+    <a href="mailto:info@wunderlust.pro" class="contact-email fade-in">info@wunderlust.pro</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2026 Wunderlust LLC</span>
+    <span>All rights reserved</span>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Update URL on scroll — no hashes
+    const allSections = [
+      { el: document.querySelector('.hero'), id: null },
+      ...Array.from(document.querySelectorAll('section[id]')).map(el => ({ el, id: el.id }))
+    ];
+
+    const urlObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const match = allSections.find(s => s.el === e.target);
+          if (match) {
+            const url = match.id === 'contact' ? '/info' : match.id ? '/' + match.id : '/';
+            history.replaceState(null, '', url);
+          }
+        }
+      });
+    }, { threshold: 0.4 });
+
+    allSections.forEach(s => urlObserver.observe(s.el));
+  </script>
+
+</body>
+</html>
